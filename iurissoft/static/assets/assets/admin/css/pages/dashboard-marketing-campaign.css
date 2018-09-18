@@ -1,0 +1,83 @@
+/* ========================================================================
+ * DASHBOARD MARKETING CAMPAIGN
+ * ======================================================================== */
+.body-content {
+  padding: 0;
+  min-height: 1380px;
+}
+
+.marketing-header {
+  padding: 20px 20px 0 20px;
+  background-color: #F4F4F4;
+  border-bottom: 1px solid #DDD;
+}
+.marketing-header .marketing-subheading {
+  font-size: 15px;
+  margin: 0;
+}
+
+.marketing-body {
+  padding: 20px;
+}
+.marketing-body #grid-container {
+  border-top: 1px dashed #DDD;
+  padding-top: 35px;
+  height: 375px !important;
+}
+
+.marketing-percent h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 80px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  color: #8CC152;
+}
+.marketing-percent p {
+  margin: 0;
+}
+.marketing-percent p .label {
+  display: inline-block;
+}
+.marketing-percent p .label i {
+  margin-top: 1px;
+  margin-left: -1px;
+}
+
+.marketing-chart ul {
+  margin-left: 50px;
+}
+.marketing-chart ul li .label {
+  margin-right: 5px;
+}
+.marketing-chart ul li .label, .marketing-chart ul li .inline {
+  display: inline-block;
+}
+
+/* Facebook color chart */
+.ct-series-a .ct-bar,
+.ct-series-a .ct-point {
+  stroke: #3b5998;
+}
+
+/* Twitter color chart */
+.ct-series-b .ct-bar,
+.ct-series-b .ct-point {
+  stroke: #00a0d1;
+}
+
+/* Google+ color chart */
+.ct-series-c .ct-bar,
+.ct-series-c .ct-point {
+  stroke: #db4a39;
+}
+
+/* Youtube color chart */
+.ct-series-d .ct-bar,
+.ct-series-d .ct-point {
+  stroke: #c4302b;
+}
+
+.cbp-l-inline {
+  margin: 25px 0;
+}

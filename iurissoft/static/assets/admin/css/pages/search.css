@@ -1,0 +1,61 @@
+/* ========================================================================
+ * SEARCH BASIC
+ * ======================================================================== */
+.search-basic-form {
+  padding: 15px;
+  background-color: #e1e1e1;
+}
+
+.search-basic-list {
+  margin-top: 20px;
+}
+.search-basic-list h4 {
+  margin-bottom: 3px;
+}
+.search-basic-list h4 a {
+  color: #1A0DAB;
+}
+.search-basic-list p {
+  color: #545454;
+}
+.search-basic-list > a {
+  color: #006621;
+  font-size: 13px;
+}
+.search-basic-list .media img {
+  width: 155px;
+}
+.search-basic-list .media .media-heading {
+  margin-bottom: 3px;
+}
+.search-basic-list .media .media-heading + a {
+  color: #006621;
+  font-size: 13px;
+}
+
+.cbp-l-filters-big {
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-align: left;
+}
+.cbp-l-filters-big .cbp-filter-item {
+  margin: 0;
+  padding: 10px 20px 7px;
+}
+
+.cbp-l-grid-tabs .cbp-item {
+  text-align: left;
+  max-width: 100%;
+}
+
+#js-grid-tabs .cbp-item:last-child {
+  padding-top: 20px;
+}
+
+#js-grid-lightbox-search .cbp-wrapper-outer {
+  overflow: inherit !important;
+}
+#js-grid-lightbox-search .cbp-wrapper-outer .cbp-item, #js-grid-lightbox-search .cbp-wrapper .cbp-item, #js-grid-lightbox-search .cbp-wrapper-helper .cbp-item {
+  max-width: inherit;
+  right: inherit;
+}

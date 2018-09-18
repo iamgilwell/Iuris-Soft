@@ -1,0 +1,150 @@
+.cbp-l-member-meta {
+  position: relative;
+}
+.cbp-l-member-meta ul {
+  margin-top: 25px;
+}
+.cbp-l-member-meta ul li {
+  width: inherit;
+  height: inherit;
+}
+.cbp-l-member-meta ul li a {
+  background-color: #34425C;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  display: block;
+  padding: 10px;
+}
+.cbp-l-member-meta ul li a i {
+  font-size: 18px;
+  color: white;
+}
+
+.cbp-l-member-biodata {
+  border-top: 2px solid #EEEEEE;
+  margin-top: 30px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.resume-category {
+  margin-bottom: 40px;
+}
+.resume-category .resume-category-title {
+  background: #34425C;
+  color: #FFF;
+  text-transform: uppercase;
+  padding-left: 10px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 35px;
+  font-weight: 300;
+}
+.resume-category .resume-category-title .icon-plus {
+  background-color: #8CC152;
+}
+.resume-category .resume-post {
+  padding: 22px 0 19px;
+  border-bottom: 1px solid #EBEBEB;
+}
+.resume-category .resume-post .resume-post-body {
+  border-width: 0 0 0 2px;
+  border-style: solid;
+  border-color: #8CC152;
+  padding-left: 15px;
+}
+.resume-category .resume-post .resume-post-body .resume-post-date {
+  line-height: 13px;
+  padding: 2px 0px 3px;
+  border-bottom: 2px solid #E3E3E3;
+  border-color: #E3E3E3;
+  color: #8F8F8F;
+  float: right;
+}
+.resume-category .resume-post .resume-post-body .resume-post-title {
+  color: #4A4A4A;
+  margin-bottom: 9px;
+  margin-right: 90px;
+}
+.resume-category .resume-post .resume-post-body .resume-post-subtitle {
+  color: #ADADAD;
+  clear: both;
+  margin-bottom: 4px;
+}
+.resume-category .resume-post .resume-post-body .resume-post-cont {
+  clear: both;
+}
+
+.resume-sidebar .skill-box {
+  margin-bottom: 39px;
+}
+.resume-sidebar .skill-box h3 {
+  color: #242A2E;
+  text-transform: uppercase;
+  padding-left: 10px;
+  border: 2px solid #D0DDE5;
+  margin-top: 0;
+  margin-bottom: 23px;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+.resume-sidebar .skill-box h3 .icon-plus {
+  background-color: #D0DDE5;
+}
+.resume-sidebar .skill-box h3 .icon-plus i {
+  color: #F8F8F8;
+}
+.resume-sidebar .skill-row {
+  border-left: 2px solid #DFDFDF;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+.resume-sidebar .skill-row .skill-title {
+  color: #4F4F4F;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.resume-sidebar .skill-row .skill-title .flag {
+  width: 19px;
+  height: 20px;
+  display: inline-block;
+  float: left;
+  margin-right: 6px;
+}
+.resume-sidebar .skill-row .skill-data {
+  height: 10px;
+  position: relative;
+  background-color: #E6E6E6;
+}
+.resume-sidebar .skill-row .skill-data .skill-percent-line {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  left: 0px;
+  top: 0px;
+  background: #8CC152;
+}
+.resume-sidebar .skill-row .skill-data .skill-percent {
+  color: #848484;
+  position: absolute;
+  right: 0px;
+  top: -25px;
+  margin-right: 1px;
+}
+
+.icon-plus {
+  float: right;
+  min-width: 35px;
+  text-align: center;
+}
+
+.resume.btns {
+  margin-bottom: 30px;
+}
+
+.cbp-l-member-img img {
+  border: none;
+}

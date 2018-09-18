@@ -1,0 +1,170 @@
+/* ========================================================================
+ * TABLES ADVANCED
+ * ======================================================================== */
+.table-default.dataTable tr.selected th, .table-default.dataTable tr.selected td {
+  color: #636E7B;
+  background-color: #EEEEEE !important;
+}
+
+.table-primary.dataTable tr.selected th, .table-primary.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #48d8ff !important;
+}
+
+.table-danger.dataTable tr.selected th, .table-danger.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #f3a79b !important;
+}
+
+.table-success.dataTable tr.selected th, .table-success.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #bedc9d !important;
+}
+
+.table-info.dataTable tr.selected th, .table-info.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #bcecf6 !important;
+}
+
+.table-warning.dataTable tr.selected th, .table-warning.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #fbdea3 !important;
+}
+
+.table-lilac.dataTable tr.selected th, .table-lilac.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #bc9cbe !important;
+}
+
+.table-inverse.dataTable tr.selected th, .table-inverse.dataTable tr.selected td {
+  color: #FFFFFF;
+  background-color: #5d5d5d !important;
+}
+
+.dt-button {
+  padding: 0.3em 1em !important;
+  border: 1px solid #DDD !important;
+  background-image: inherit !important;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.dt-button:focus, .dt-button.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.dt-button:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.dt-button:active, .dt-button.active, .open > .dt-button.dropdown-toggle {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.dt-button:active:hover, .dt-button:active:focus, .dt-button:active.focus, .dt-button.active:hover, .dt-button.active:focus, .dt-button.active.focus, .open > .dt-button.dropdown-toggle:hover, .open > .dt-button.dropdown-toggle:focus, .open > .dt-button.dropdown-toggle.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.dt-button:active, .dt-button.active, .open > .dt-button.dropdown-toggle {
+  background-image: none;
+}
+.dt-button.disabled, .dt-button.disabled:hover, .dt-button.disabled:focus, .dt-button.disabled.focus, .dt-button.disabled:active, .dt-button.disabled.active, .dt-button[disabled], .dt-button[disabled]:hover, .dt-button[disabled]:focus, .dt-button[disabled].focus, .dt-button[disabled]:active, .dt-button[disabled].active, fieldset[disabled] .dt-button, fieldset[disabled] .dt-button:hover, fieldset[disabled] .dt-button:focus, fieldset[disabled] .dt-button.focus, fieldset[disabled] .dt-button:active, fieldset[disabled] .dt-button.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.dt-button .badge {
+  color: #fff;
+  background-color: #333;
+}
+
+div.dt-button-collection {
+  border: none !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
+}
+
+table.dataTable .ckbox {
+  width: 20px;
+  margin: 0 auto;
+}
+table.dataTable thead tr th:first-child {
+  width: 1%;
+  padding: 0;
+  text-align: center;
+  min-width: inherit !important;
+}
+table.dataTable tr td:first-child {
+  text-align: center;
+}
+table.dataTable tr td:last-child {
+  width: 1%;
+  text-align: center;
+}
+table.dataTable tr td:last-child .btn {
+  margin: 0;
+}
+table.dataTable tr td .btn.btn-xs {
+  padding: 4px 6px !important;
+}
+
+.dataTables_length label {
+  margin: 0;
+}
+
+.dataTables_info {
+  float: left;
+  margin: 10px 0 10px;
+  padding: 0 !important;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 10px 0 20px;
+}
+
+table.dataTable.select tbody tr,
+table.dataTable thead th:first-child {
+  cursor: pointer;
+}
+
+.dropdown-table-colors, .dropdown-table-language {
+  padding: 5px;
+}
+.dropdown-table-colors .dropdown-list, .dropdown-table-language .dropdown-list {
+  width: 34px;
+  height: 34px;
+  opacity: 0.7;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.dropdown-table-colors .dropdown-list.flag-icon, .dropdown-table-language .dropdown-list.flag-icon {
+  width: 34px;
+  height: 23px;
+}
+.dropdown-table-colors .dropdown-list:hover, .dropdown-table-language .dropdown-list:hover {
+  opacity: 1;
+}
+
+.dropdown-toggle-column li i {
+  color: #8CC152;
+}
+.dropdown-toggle-column li.selected i {
+  color: #E9573F;
+}
+
+.text-language {
+  text-transform: capitalize;
+}
+
+.gritter-position {
+  position: fixed;
+  left: 45%;
+  right: 33%;
+  top: 33%;
+  width: 300px;
+}

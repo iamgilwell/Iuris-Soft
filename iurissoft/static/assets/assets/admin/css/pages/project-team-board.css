@@ -1,0 +1,93 @@
+.team-board-header {
+  margin-bottom: 20px;
+}
+.team-board-header .pull-right ul li {
+  position: relative;
+}
+.team-board-header .pull-right ul li .online {
+  position: absolute;
+  bottom: -7px;
+  left: 23px;
+  border: 1px solid #E9EAED;
+}
+
+.panel-team-board .cbp-l-filters-button .label {
+  line-height: 7px;
+  height: 10px;
+  width: 10px;
+  margin-right: 3px;
+}
+
+.team-board-list {
+  border-right: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  position: relative;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 2px;
+}
+.team-board-list .team-board-message {
+  margin-bottom: 0;
+}
+.team-board-list .team-board-author {
+  margin-bottom: 0;
+}
+.team-board-list .panel-heading {
+  color: #C5C7C9;
+  border-bottom: 1px dashed #DDD;
+  padding: 0 0 10px 0;
+}
+.team-board-list .panel-body, .team-board-list .panel-footer {
+  background-color: transparent;
+  padding: 10px 0;
+}
+.team-board-list .panel-footer {
+  border: none;
+  padding: 0;
+}
+.team-board-list .panel-footer img {
+  width: 30px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.team-board-list .cbp-l-grid-blog-title {
+  margin-top: 0;
+}
+.team-board-list.danger:after, .team-board-list.primary:after, .team-board-list.info:after, .team-board-list.success:after, .team-board-list.warning:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  right: -1px;
+}
+.team-board-list.danger:after {
+  border-top: 3px solid #E9573F;
+}
+.team-board-list.primary:after {
+  border-top: 3px solid #00B1E1;
+}
+.team-board-list.info:after {
+  border-top: 3px solid #63D3E9;
+}
+.team-board-list.success:after {
+  border-top: 3px solid #8CC152;
+}
+.team-board-list.warning:after {
+  border-top: 3px solid #F6BB42;
+}
+
+.cbp-item {
+  overflow: visible !important;
+}
+
+.cbp-l-filters-dropdown-floated {
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: 8px;
+}
+
+.cbp-search-input {
+  height: 38px;
+}

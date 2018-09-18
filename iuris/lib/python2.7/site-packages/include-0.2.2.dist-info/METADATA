@@ -1,0 +1,82 @@
+Metadata-Version: 2.0
+Name: include
+Version: 0.2.2
+Summary: Dynamic import from files and other sources
+Home-page: https://github.com/maxfischer2781/include
+Author: Max Fischer
+Author-email: maxfischer2781@gmail.com
+License: MIT
+Description-Content-Type: UNKNOWN
+Keywords: import include eval exec pickle multiprocess
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: System :: Monitoring
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+#################################
+include - Dynamic Module Importer
+#################################
+
+|docs| |issues| |pypi| |travis| |codecov|
+
+When you just need that code, ``include`` does the ugly bits for you.
+It allows you to run code from files, strings or other sources as if they were regular modules.
+Code is executed as compliant as possible with the Python ecosystem.
+The resulting modules and objects can be pickled, copied and sent to other processes.
+This makes ``include`` suitable for testing, configuration, code creation and more.
+
+Usage
+#####
+
+``include`` provides a simple API that works similar to the ``__import__`` builtin.
+To import a module from its file path, pass it to the ``include.path`` function:
+
+.. code:: python
+
+    import include
+    conf_module = include.path('/etc/myapp/conf.py')
+
+Once a module has been imported by ``include``, it does not require special handling.
+You can work with the resulting module and its content without using ``include`` explicitly.
+
+:note: The ``include`` package must be importable by any python process working with a module imported by ``include``.
+
+Installation
+############
+
+The most recent stable version of ``include`` is available from `pypi <https://pypi.python.org>`_.
+You can install it using ``pip``:
+
+.. code:: bash
+
+    pip install include
+
+.. |travis| image:: https://travis-ci.org/maxfischer2781/include.svg?branch=master
+    :target: https://travis-ci.org/maxfischer2781/include
+    :alt: Test Health
+
+.. |pypi| image:: https://img.shields.io/pypi/v/include.svg
+    :target: https://pypi.python.org/pypi/include
+    :alt: PyPI Package
+
+.. |codecov| image:: https://codecov.io/gh/maxfischer2781/include/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/maxfischer2781/include
+    :alt: Code Coverage
+
+.. |docs| image:: https://readthedocs.org/projects/include/badge/?version=latest
+    :target: http://include.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. |issues| image:: https://img.shields.io/github/issues/maxfischer2781/include.svg
+    :target: https://github.com/maxfischer2781/include/issues
+    :alt: Open Issues
+

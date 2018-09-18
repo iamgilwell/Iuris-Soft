@@ -1,0 +1,40 @@
+/* ========================================================================
+ * DASHBOARD PROJECTS
+ * ======================================================================== */
+.top-assign-chart {
+  width: 84%;
+}
+.top-assign-chart li {
+  height: 30px;
+  line-height: 27px;
+  font-size: 11px;
+}
+.top-assign-chart li.current:before {
+  left: 41px;
+  color: #8f8f8f;
+}
+.top-assign-chart li.current .bar {
+  background-color: #2A2A2A;
+}
+.top-assign-chart li.current .number {
+  padding-left: 38px;
+  color: #2A2A2A;
+}
+.top-assign-chart li .number {
+  top: 1px;
+}
+.top-assign-chart li img {
+  vertical-align: inherit;
+  width: 30px;
+}
+
+.table-time-report thead tr th {
+  font-size: 10px;
+  vertical-align: top;
+}
+.table-time-report thead tr th:first-child {
+  width: 230px;
+}
+.table-time-report tbody tr td {
+  background-color: transparent;
+}

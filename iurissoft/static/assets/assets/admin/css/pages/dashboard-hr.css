@@ -1,0 +1,23 @@
+/* ========================================================================
+ * DASHBOARD HR
+ * ======================================================================== */
+.indicator-gender li {
+  padding: 0 20px;
+}
+.indicator-gender li i {
+  font-size: 160px;
+}
+.indicator-gender li span {
+  display: block;
+  margin-top: 10px;
+  height: 22px;
+  width: 100%;
+}
+
+.panel .panel-body {
+  padding: 30px;
+}
+
+.legendColorBox > div {
+  margin-right: 5px;
+}
