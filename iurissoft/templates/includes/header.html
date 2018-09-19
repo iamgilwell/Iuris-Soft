@@ -320,7 +320,13 @@
                                 <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
                                 <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>
                                 <li class="divider"></li>
-                                <li><a href="page-signin.html"><i class="fa fa-sign-out"></i>Logout</a></li>
+                                {% if user.is_authenticated %}
+                                 <li>User: {{ user.get_username }}</li>
+                                 <li><a href="{% url 'logout'%}?next={{request.path}}"><i class="fa fa-sign-out"></i>Logout</a></li>
+                               {% else %}
+                                 <li><a href="{% url 'login'%}?next={{request.path}}"><i class="fa fa-sign-in"></i>Login</a></li>
+                               {% endif %}
+                               <!-- <li><a href="page-signin.html"><i class="fa fa-sign-out"></i>Logout</a></li>-->
                             </ul>
                             <!--/ End dropdown menu -->
                         </li><!-- /.dropdown navbar-profile -->
