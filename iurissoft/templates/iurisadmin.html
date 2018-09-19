@@ -1,447 +1,6 @@
-
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-
-    <!-- START @HEAD -->
-   {% load staticfiles %}
-<!-- Mirrored from themes.djavaui.com/blankon-fullpack-admin-theme/live-preview/admin/html/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Sep 2018 04:37:12 GMT -->
-<head>
-        <!-- START @META SECTION -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.">
-        <meta name="keywords" content="admin, admin template, bootstrap3, clean, fontawesome4, good documentation, lightweight admin, responsive dashboard, webapp">
-        <meta name="author" content="Djava UI">
-        <title>DASHBOARD | BLANKON - Fullpack Admin Theme</title>
-        <!--/ END META SECTION -->
-
-        <!-- START @FAVICONS -->
-        <link href="../../../img/ico/html/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
-        <link href="../../../img/ico/html/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
-        <link href="../../../img/ico/html/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
-        <link href="../../../img/ico/html/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed">
-        <link href="../../../img/ico/html/apple-touch-icon.png" rel="shortcut icon">
-        <!--/ END FAVICONS -->
-
-        <!-- START @FONT STYLES -->
-        <link href="../../../../../fonts.googleapis.com/css13b7.css?family=Open+Sans:400,300,600,700" rel="stylesheet">
-        <link href="../../../../../fonts.googleapis.com/css6a78.css?family=Oswald:700,400" rel="stylesheet">
-        <!--/ END FONT STYLES -->
-
-        <!-- START @GLOBAL MANDATORY STYLES -->
-        <link href="{% static 'assets/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
-        <!--/ END GLOBAL MANDATORY STYLES -->
-
-        <!-- START @PAGE LEVEL STYLES -->
-        <link href="{% static 'assets/global/plugins/bower_components/fontawesome/css/font-awesome.min.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/global/plugins/bower_components/animate.css/animate.min.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/global/plugins/bower_components/dropzone/downloads/css/dropzone.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/global/plugins/bower_components/jquery.gritter/css/jquery.gritter.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/global/plugins/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css'%}"rel="stylesheet">
-        <!--/ END PAGE LEVEL STYLES -->
-
-        <!-- START @THEME STYLES -->
-        <link href="{% static 'assets/admin/css/reset.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/admin/css/layout.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/admin/css/components.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/admin/css/plugins.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/admin/css/themes/default.theme.css'%}" rel="stylesheet" id="theme">
-        <link href="{% static 'assets/admin/css/custom.css'%}" rel="stylesheet">
-        <!--/ END THEME STYLES -->
-
-        <!-- START @IE SUPPORT -->
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="{% static 'assets/global/plugins/bower_components/html5shiv/dist/html5shiv.min.js'%}"></script>
-        <script src="{% static 'assets/global/plugins/bower_components/respond-minmax/dest/respond.min.js'%}"></script>
-        <![endif]-->
-        <!--/ END IE SUPPORT -->
-    </head>
-    <!--/ END HEAD -->
-
-    <!--
-
-    |=========================================================================================================================|
-    |  TABLE OF CONTENTS (Use search to find needed section)                                                                  |
-    |=========================================================================================================================|
-    |  01. @HEAD                        |  Container for all the head elements                                                |
-    |  02. @META SECTION                |  The meta tag provides metadata about the HTML document                             |
-    |  03. @FAVICONS                    |  Short for favorite icon, shortcut icon, website icon, tab icon or bookmark icon    |
-    |  04. @FONT STYLES                 |  Font from google fonts                                                             |
-    |  05. @GLOBAL MANDATORY STYLES     |  The main 3rd party plugins css file                                                |
-    |  06. @PAGE LEVEL STYLES           |  Specific 3rd party plugins css file                                                |
-    |  07. @THEME STYLES                |  The main theme css file                                                            |
-    |  08. @IE SUPPORT                  |  IE support of HTML5 elements and media queries                                     |
-    |=========================================================================================================================|
-    |  09. @BODY                        |  Contains all the contents of an HTML document                                      |
-    |  10. @WRAPPER                     |  Wrapping page section                                                              |
-    |  11. @HEADER                      |  Header page section contains about logo, top navigation, notification menu         |
-    |  12. @SIDEBAR LEFT                |  Sidebar page section contains all sidebar menu left                                |
-    |  13. @PAGE CONTENT                |  Contents page section contains breadcrumb, content page, footer page               |
-    |  14. @SIDEBAR RIGHT               |  Sidebar page section contains all sidebar menu right                               |
-    |  15. @BACK TOP                    |  Element back to top and action                                                     |
-    |=========================================================================================================================|
-    |  16. @CORE PLUGINS                |  The main 3rd party plugins script file                                             |
-    |  17. @PAGE LEVEL PLUGINS          |  Specific 3rd party plugins script file                                             |
-    |  18. @PAGE LEVEL SCRIPTS          |  The main theme script file                                                         |
-    |=========================================================================================================================|
-
-    START @BODY
-    |=========================================================================================================================|
-	|  TABLE OF CONTENTS (Apply to body class)                                                                                |
-	|=========================================================================================================================|
-    |  01. page-boxed                   |  Page into the box is not full width screen                                         |
-	|  02. page-header-fixed            |  Header element become fixed position                                               |
-	|  03. page-sidebar-fixed           |  Sidebar element become fixed position with scroll support                          |
-	|  04. page-sidebar-minimize        |  Sidebar element become minimize style width sidebar                                |
-	|  05. page-footer-fixed            |  Footer element become fixed position with scroll support on page content           |
-	|  06. page-sound                   |  For playing sounds on user actions and page events                                 |
-	|=========================================================================================================================|
-
-	-->
-    <body class="page-session page-sound page-header-fixed page-sidebar-fixed demo-dashboard-session">
-
-        <!--[if lt IE 9]>
-        <p class="upgrade-browser">Upps!! You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- START @WRAPPER -->
-        <section id="wrapper">
-
-            <!-- START @HEADER -->
-            <header id="header">
-
-                <!-- Start header left -->
-                <div class="header-left">
-                    <!-- Start offcanvas left: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                    <div class="navbar-minimize-mobile left">
-                        <i class="fa fa-bars"></i>
-                    </div>
-                    <!--/ End offcanvas left -->
-
-                    <!-- Start navbar header -->
-                    <div class="navbar-header">
-
-                        <!-- Start brand -->
-                        <a id="tour-1" class="navbar-brand" href="dashboard.html">
-                            <img class="logo" src="../../../img/logo/html/logo-white.png" alt="brand logo"/>
-                        </a><!-- /.navbar-brand -->
-                        <!--/ End brand -->
-
-                    </div><!-- /.navbar-header -->
-                    <!--/ End navbar header -->
-
-                    <!-- Start offcanvas right: This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                    <div class="navbar-minimize-mobile right">
-                        <i class="fa fa-cog"></i>
-                    </div>
-                    <!--/ End offcanvas right -->
-
-                    <div class="clearfix"></div>
-                </div><!-- /.header-left -->
-                <!--/ End header left -->
-
-                <!-- Start header right -->
-                <div class="header-right">
-                    <!-- Start navbar toolbar -->
-                    <div class="navbar navbar-toolbar">
-
-                        <!-- Start left navigation -->
-                        <ul class="nav navbar-nav navbar-left">
-
-                            <!-- Start sidebar shrink -->
-                            <li id="tour-2" class="navbar-minimize">
-                                <a href="javascript:void(0);" title="Minimize sidebar">
-                                    <i class="fa fa-bars"></i>
-                                </a>
-                            </li>
-                            <!--/ End sidebar shrink -->
-
-                            <!-- Start form search -->
-                            <li class="navbar-search">
-                                <!-- Just view on mobile screen-->
-                                <a href="#" class="trigger-search"><i class="fa fa-search"></i></a>
-                                <form id="tour-3" class="navbar-form">
-                                    <div class="form-group has-feedback">
-                                        <input type="text" class="form-control typeahead rounded" placeholder="Search for people, places and things">
-                                        <button type="submit" class="btn btn-theme fa fa-search form-control-feedback rounded"></button>
-                                    </div>
-                                </form>
-                            </li>
-                            <!--/ End form search -->
-
-                        </ul><!-- /.nav navbar-nav navbar-left -->
-                        <!--/ End left navigation -->
-
-                        <!-- Start right navigation -->
-                        <ul class="nav navbar-nav navbar-right"><!-- /.nav navbar-nav navbar-right -->
-
-                        <!-- Start messages -->
-                        <li id="tour-4" class="dropdown navbar-message">
-
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope-o"></i><span class="count label label-danger rounded">7</span></a>
-
-                            <!-- Start dropdown menu -->
-                            <div class="dropdown-menu animated flipInX">
-                                <div class="dropdown-header">
-                                    <span class="title">Messages <strong>(7)</strong></span>
-                                    <span class="option text-right"><a href="#">+ New message</a></span>
-                                </div>
-                                <div class="dropdown-body">
-
-                                    <!-- Start message search -->
-                                    <form class="form-horizontal" action="#">
-                                        <div class="form-group has-feedback has-feedback-sm m-5">
-                                            <input type="text" class="form-control input-sm" placeholder="Search message...">
-                                            <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
-                                        </div>
-                                    </form>
-                                    <!--/ End message search -->
-
-                                    <!-- Start message list -->
-                                    <div class="media-list niceScroll">
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/2.png" class="media-object img-circle" alt="John Kribo"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">John Kribo</span>
-                                                <span class="media-text">I was impressed how fast the content is loaded. Congratulations. nice design.</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta"><i class="fa fa-reply"></i></span>
-                                                <span class="media-meta"><i class="fa fa-paperclip"></i></span>
-                                                <span class="media-meta pull-right">13 minutes</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/3.png" class="media-object img-circle" alt="Jennifer Poiyem"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Jennifer Poiyem</span>
-                                                <span class="media-text">It’s Simple, Clean & Nice .. Good work Dear .. GLWS</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta pull-right">17 hours</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/4.png" class="media-object img-circle" alt="Clara Wati"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Clara Wati</span>
-                                                <span class="media-text">Great work! Do you have any plans to add loading indicators for AJAX calls that might take longer than normal?</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta pull-right">1 days</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/5.png" class="media-object img-circle" alt="Toni Mriang"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Toni Mriang</span>
-                                                <span class="media-text">I am very interested in the theme and I’m thinking about buying it.</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta"><i class="fa fa-paperclip"></i></span>
-                                                <span class="media-meta pull-right">2 days</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/6.png" class="media-object img-circle" alt="Bella negoro"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Bella negoro</span>
-                                                <span class="media-text">Great work! Good luck!</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta"><i class="fa fa-paperclip"></i></span>
-                                                <span class="media-meta"><i class="fa fa-user"></i></span>
-                                                <span class="media-meta pull-right">1 week</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/7.png" class="media-object img-circle" alt="Kim Mbako"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Kim Mbako</span>
-                                                <span class="media-text">Hi! First of all, thank you for the very nice theme for creating awesome web applications :)</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta"><i class="fa fa-paperclip"></i></span>
-                                                <span class="media-meta pull-right">1 week</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="page-messages.html" class="media">
-                                            <div class="pull-left"><img src="../../../img/avatar/50/8.png" class="media-object img-circle" alt="Pack Suparman"/></div>
-                                            <div class="media-body">
-                                                <span class="media-heading">Pack Suparman</span>
-                                                <span class="media-text">Apik temen kie jan template, nyong gep tuku jal..</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta pull-right">1 week</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <!-- Start message indicator -->
-                                        <a href="#" class="media indicator inline">
-                                            <span class="spinner">Load more messages...</span>
-                                        </a>
-                                        <!--/ End message indicator -->
-
-                                    </div>
-                                    <!--/ End message list -->
-
-                                </div>
-                                <div class="dropdown-footer">
-                                    <a href="page-messages.html">See All</a>
-                                </div>
-                            </div>
-                            <!--/ End dropdown menu -->
-
-                        </li><!-- /.dropdown navbar-message -->
-                        <!--/ End messages -->
-
-                        <!-- Start notifications -->
-                        <li id="tour-5" class="dropdown navbar-notification">
-
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i><span class="count label label-danger rounded">6</span></a>
-
-                            <!-- Start dropdown menu -->
-                            <div class="dropdown-menu animated flipInX">
-                                <div class="dropdown-header">
-                                    <span class="title">Notifications <strong>(10)</strong></span>
-                                    <span class="option text-right"><a href="#"><i class="fa fa-cog"></i> Setting</a></span>
-                                </div>
-                                <div class="dropdown-body niceScroll">
-
-                                    <!-- Start notification list -->
-                                    <div class="media-list small">
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><i class="fa fa-share-alt fg-info"></i></div>
-                                            <div class="media-body">
-                                                <span class="media-text"><strong>Dolanan Remi : </strong><strong>Chris Job,</strong><strong>Denny Puk</strong> and <strong>Joko Fernandes</strong> sent you <strong>5 free energy boosts and other request</strong></span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">3 minutes</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><i class="fa fa-cogs fg-success"></i></div>
-                                            <div class="media-body">
-                                                <span class="media-text">Your sistem is updated</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">5 minutes</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><i class="fa fa-ban fg-danger"></i></div>
-                                            <div class="media-body">
-                                                <span class="media-text">3 Member is BANNED</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">5 minutes</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><img class="img-circle" src="../../../img/avatar/50/10.png" alt=""/></div>
-                                            <div class="media-body">
-                                                <span class="media-text">daddy pushed to project Blankon version 1.0.0</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">45 minutes</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><i class="fa fa-user fg-info"></i></div>
-                                            <div class="media-body">
-                                                <span class="media-text">Change your user profile</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">1 days</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <a href="#" class="media">
-                                            <div class="media-object pull-left"><i class="fa fa-book fg-info"></i></div>
-                                            <div class="media-body">
-                                                <span class="media-text">Added new article</span>
-                                                <!-- Start meta icon -->
-                                                <span class="media-meta">1 days</span>
-                                                <!--/ End meta icon -->
-                                            </div><!-- /.media-body -->
-                                        </a><!-- /.media -->
-
-                                        <!-- Start notification indicator -->
-                                        <a href="#" class="media indicator inline">
-                                            <span class="spinner">Load more notifications...</span>
-                                        </a>
-                                        <!--/ End notification indicator -->
-
-                                    </div>
-                                    <!--/ End notification list -->
-
-                                </div>
-                                <div class="dropdown-footer">
-                                    <a href="#">See All</a>
-                                </div>
-                            </div>
-                            <!--/ End dropdown menu -->
-
-                        </li><!-- /.dropdown navbar-notification -->
-                        <!--/ End notifications -->
-
-                        <!-- Start profile -->
-                        <li id="tour-6" class="dropdown navbar-profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="meta">
-                                    <span class="avatar"><img src="../../../img/avatar/35/1.png" class="img-circle" alt="admin"></span>
-                                    <span class="text hidden-xs hidden-sm text-muted">Tol Lee</span>
-                                    <span class="caret"></span>
-                                </span>
-                            </a>
-                            <!-- Start dropdown menu -->
-                            <ul class="dropdown-menu animated flipInX">
-                                <li class="dropdown-header">Account</li>
-                                <li><a href="page-profile.html"><i class="fa fa-user"></i>View profile</a></li>
-                                <li><a href="mail-inbox.html"><i class="fa fa-envelope-square"></i>Inbox <span class="label label-info pull-right">30</span></a></li>
-                                <li><a href="#"><i class="fa fa-share-square"></i>Invite a friend</a></li>
-                                <li class="dropdown-header">Product</li>
-                                <li><a href="#"><i class="fa fa-upload"></i>Upload</a></li>
-                                <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
-                                <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>
-                                <li class="divider"></li>
-                                <li><a href="page-signin.html"><i class="fa fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                            <!--/ End dropdown menu -->
-                        </li><!-- /.dropdown navbar-profile -->
-                        <!--/ End profile -->
-
-                        <!-- Start settings -->
-                        <li id="tour-7" class="navbar-setting pull-right">
-                            <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
-                        </li><!-- /.navbar-setting pull-right -->
-                        <!--/ End settings -->
-
-                        </ul>
-                        <!--/ End right navigation -->
-
-                    </div><!-- /.navbar-toolbar -->
-                    <!--/ End navbar toolbar -->
-                </div><!-- /.header-right -->
-                <!--/ End header left -->
-
-            </header> <!-- /#header -->
-            <!--/ END HEADER -->
+{% load staticfiles %}
+{% include "includes/head.html" %}
+{% include "includes/header.html" %}
 
             <!--
 
@@ -461,7 +20,7 @@
                 <div id="tour-8" class="sidebar-content">
                     <div class="media">
                         <a class="pull-left has-notif avatar" href="page-profile.html">
-                            <img src="../../../img/avatar/50/1.png" alt="admin">
+                            <img src="{% static 'assets/img/avatar/50/1.png'%}" alt="admin">
                             <i class="online"></i>
                         </a>
                         <div class="media-body">
@@ -1211,7 +770,7 @@
                                     <!-- Start weather widget -->
                                     <div id="tour-14" class="widget-wrapper bg-theme rounded">
                                         <div class="weather-current-city">
-                                            <img data-no-retina src="../../../img/media/building/5.jpg" alt="..."/>
+                                            <img data-no-retina src="{% static 'assets/img/media/building/5.jpg'%}" alt="..."/>
                                             <div class="row">
                                                 <div class="col-md-8 col-sm-8 col-xs-8">
                                                             <span class="current-city">
@@ -1297,7 +856,7 @@
                                     <tr>
                                         <td class="text-center border-right">1</td>
                                         <td>
-                                            <img src="../../../img/avatar/35/2.png" class="img-circle img-bordered-theme" alt="John Kribo">
+                                            <img src="{% static 'assets/img/avatar/35/2.png'%}" class="img-circle img-bordered-theme" alt="John Kribo">
                                             <span>John Kribo</span>
                                         </td>
                                         <td>United State</td>
@@ -1320,7 +879,7 @@
                                     <tr>
                                         <td class="text-center border-right">2</td>
                                         <td>
-                                            <img src="../../../img/avatar/35/3.png" class="img-circle img-bordered-theme" alt="Jennifer Poiyem">
+                                            <img src="{% static 'assets/img/avatar/35/3.png'%}" class="img-circle img-bordered-theme" alt="Jennifer Poiyem">
                                             <span>Jennifer Poiyem</span>
                                         </td>
                                         <td>Spain</td>
@@ -1343,7 +902,7 @@
                                     <tr>
                                         <td class="text-center border-right">3</td>
                                         <td>
-                                            <img src="../../../img/avatar/35/4.png" class="img-circle img-bordered-theme" alt="Clara Wati">
+                                            <img src="{% static 'assets/img/avatar/35/4.png'%}" class="img-circle img-bordered-theme" alt="Clara Wati">
                                             <span>Clara Wati</span>
                                         </td>
                                         <td>United State</td>
@@ -1366,7 +925,7 @@
                                     <tr>
                                         <td class="text-center border-right">4</td>
                                         <td>
-                                            <img src="../../../img/avatar/35/5.png" class="img-circle img-bordered-theme" alt="Toni Mriang">
+                                            <img src="{% static 'assets/img/avatar/35/5.png'%}" class="img-circle img-bordered-theme" alt="Toni Mriang">
                                             <span>Toni Mriang</span>
                                         </td>
                                         <td>Germany</td>
@@ -1389,7 +948,7 @@
                                     <tr>
                                         <td class="text-center border-right">5</td>
                                         <td>
-                                            <img src="../../../img/avatar/35/6.png" class="img-circle img-bordered-theme" alt="Bella negoro">
+                                            <img src="{% static 'assets/img/avatar/35/6.png'%}" class="img-circle img-bordered-theme" alt="Bella negoro">
                                             <span>Bella negoro</span>
                                         </td>
                                         <td>England</td>
@@ -1633,7 +1192,7 @@
                                             <div class="media-list working">
                                                 <a href="#" class="media">
                                                     <div class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/10.png" class="img-circle" alt="Daddy Botak">
+                                                        <img src="{% static 'assets/img/avatar/35/10.png'%}" class="img-circle" alt="Daddy Botak">
                                                         <i class="online"></i>
                                                     </div><!-- /.media-object -->
                                                     <div class="media-body">
@@ -1644,7 +1203,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <div class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/11.png" class="img-circle" alt="Sarah Tingting">
+                                                        <img src="{% static 'assets/img/avatar/35/11.png'%}" class="img-circle" alt="Sarah Tingting">
                                                         <i class="offline"></i>
                                                     </div><!-- /.media-object -->
                                                     <div class="media-body">
@@ -1656,7 +1215,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <div class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="">
                                                         <i class="busy"></i>
                                                     </div><!-- /.media-object -->
                                                     <div class="media-body">
@@ -1667,7 +1226,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <div class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/13.png" class="img-circle" alt="Claudia Cinta">
+                                                        <img src="{% static 'assets/img/avatar/35/13.png'%}" class="img-circle" alt="Claudia Cinta">
                                                         <i class="online"></i>
                                                     </div><!-- /.media-object -->
                                                     <div class="media-body">
@@ -1678,7 +1237,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <div class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="">
                                                         <i class="busy"></i>
                                                     </div><!-- /.media-object -->
                                                     <div class="media-body">
@@ -2056,7 +1615,7 @@
                                             <div class="media-list">
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/10.png" class="img-circle" alt="Daddy Botak">
+                                                        <img src="{% static 'assets/img/avatar/35/10.png'%}" class="img-circle" alt="Daddy Botak">
                                                         <i class="online"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2067,7 +1626,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/11.png" class="img-circle" alt="Sarah Tingting">
+                                                        <img src="{% static 'assets/img/avatar/35/11.png'%}" class="img-circle" alt="Sarah Tingting">
                                                         <i class="offline"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2079,7 +1638,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="...">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="...">
                                                         <i class="busy"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2090,7 +1649,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/12.png" class="img-circle" alt="Harry Potret">
+                                                        <img src="{% static 'assets/img/avatar/35/12.png'%}" class="img-circle" alt="Harry Potret">
                                                         <i class="online"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2101,7 +1660,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="...">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="...">
                                                         <i class="busy"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2126,7 +1685,7 @@
                                             <div class="media-list">
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/15.png" class="img-circle" alt="Jeck Joko">
+                                                        <img src="{% static 'assets/img/avatar/35/15.png'%}" class="img-circle" alt="Jeck Joko">
                                                         <i class="online"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2137,7 +1696,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/16.png" class="img-circle" alt="Tenny Imoet">
+                                                        <img src="{% static 'assets/img/avatar/35/16.png'%}" class="img-circle" alt="Tenny Imoet">
                                                         <i class="busy"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2148,7 +1707,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/17.png" class="img-circle" alt="Leli Madang">
+                                                        <img src="{% static 'assets/img/avatar/35/17.png'%}" class="img-circle" alt="Leli Madang">
                                                         <i class="offline"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2160,7 +1719,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/18.png" class="img-circle" alt="Rebecca Cabean">
+                                                        <img src="{% static 'assets/img/avatar/35/18.png'%}" class="img-circle" alt="Rebecca Cabean">
                                                         <i class="offline"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2172,7 +1731,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="...">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="...">
                                                         <i class="busy"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2197,7 +1756,7 @@
                                             <div class="media-list">
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/19.png" class="img-circle" alt="Sishy Mawar">
+                                                        <img src="{% static 'assets/img/avatar/35/19.png'%}" class="img-circle" alt="Sishy Mawar">
                                                         <i class="offline"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2209,7 +1768,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/20.png" class="img-circle" alt="Mbah Roso">
+                                                        <img src="{% static 'assets/img/avatar/35/20.png'%}" class="img-circle" alt="Mbah Roso">
                                                         <i class="away"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2221,7 +1780,7 @@
                                                 </a><!-- /.media -->
                                                 <a href="#" class="media">
                                                     <span class="media-object pull-left has-notif">
-                                                        <img src="../../../img/avatar/35/26.png" class="img-circle" alt="...">
+                                                        <img src="{% static 'assets/img/avatar/35/26.png'%}" class="img-circle" alt="...">
                                                         <i class="busy"></i>
                                                     </span>
                                                     <span class="media-body">
@@ -2267,7 +1826,7 @@
                         <div class="media">
                             <div class="media-left" style="padding-right: 15px;">
                                 <a href="#">
-                                    <img data-no-retina class="media-object" src="../../../img/media/mascot/1.jpg" alt="..." style="width: 100px;">
+                                    <img data-no-retina class="media-object" src="{% static 'assets/img/media/mascot/1.jpg'%}" alt="..." style="width: 100px;">
                                 </a>
                             </div>
                             <div class="media-body">
@@ -2292,7 +1851,7 @@
                         <h4 class="modal-title">New Features</h4>
                     </div>
                     <div class="modal-body" style="height: 400px; overflow: scroll;">
-                        <img src="../../../img/admin-special/marketing-campaign/new-feature.jpg" alt="..." class="img-responsive" style="width: 500px; margin: 0 auto 25px;"/>
+                        <img src="{% static 'assets/img/admin-special/marketing-campaign/new-feature.jpg'%}" alt="..." class="img-responsive" style="width: 500px; margin: 0 auto 25px;"/>
                         <div class="table-responsive">
                             <table class="table table-default table-bordered table-condensed mb-20">
                                 <thead>
@@ -2388,7 +1947,7 @@
                         <div class="media">
                             <div class="media-left">
                                 <a href="#">
-                                    <img data-no-retina class="media-object" src="../../../img/media/mascot/1.jpg" alt="..." style="width: 100px;">
+                                    <img data-no-retina class="media-object" src="{% static 'assets/img/media/mascot/1.jpg'%}" alt="..." style="width: 100px;">
                                 </a>
                             </div>
                             <div class="media-body">
