@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'iuris_admin'
+    'iuris_admin',
+    'contactsmanagement',
+    'clients',
+    'contracts',
+    'employees'
 ]
 
 MIDDLEWARE = [
