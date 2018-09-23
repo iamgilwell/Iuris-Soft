@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from organizations.models import Organizations
 
 # Create your models here.
 class ContactType(models.Model):
@@ -25,7 +26,8 @@ class ContactManagements(models.Model):
     primary_email=models.CharField(max_length=250)
     mobile_number=models.CharField(max_length=250)
 
-    orginization=models.CharField(max_length=250)
+    #orginization=models.CharField(max_length=250)
+    orginization = models.ForeignKey(Organizations,default=None, blank=True, on_delete=models.DO_NOTHING)
     assigned_to=models.ForeignKey(User, default=None, blank=True, on_delete=models.DO_NOTHING)
 
     contact_type=models.ManyToManyField(ContactType)
