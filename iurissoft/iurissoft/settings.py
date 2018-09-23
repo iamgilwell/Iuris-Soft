@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'contactsmanagement',
     'clients',
     'contracts',
-    'employees'
+    'employees',
+    'organizations'
 ]
 
 MIDDLEWARE = [
