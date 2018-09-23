@@ -32,6 +32,7 @@ class ContactManagements(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    added_by = models.ForeignKey(User,null=True, default=None, blank=True, on_delete=models.DO_NOTHING,related_name='added_by')
     status = models.CharField("Status", max_length=250, choices=CONTACT_STATUS)
 
     def __str__(self):
