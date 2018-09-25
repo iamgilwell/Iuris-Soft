@@ -1,0 +1,6 @@
+*.pyc
+*.idea
+iuris/
+.idea/
+__pycache__/
+__pycache__
