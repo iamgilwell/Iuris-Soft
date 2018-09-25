@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'iuris_admin',
+<<<<<<< .merge_file_ykQ5ge
 <<<<<<< .merge_file_XEqdVi
 <<<<<<< .merge_file_p9gJau
 <<<<<<< .merge_file_VOdDZq
@@ -51,10 +52,13 @@ INSTALLED_APPS = [
 >>>>>>> .merge_file_FD6Fkv
 =======
 >>>>>>> .merge_file_MlXvth
+=======
+>>>>>>> .merge_file_HPxh0d
     'contractsmanagement',
     'ckeditor',
     'ckeditor_uploader',
 
+<<<<<<< .merge_file_ykQ5ge
 <<<<<<< .merge_file_XEqdVi
 <<<<<<< .merge_file_p9gJau
 >>>>>>> .merge_file_n2jtNq
@@ -62,6 +66,8 @@ INSTALLED_APPS = [
 >>>>>>> .merge_file_FD6Fkv
 =======
 >>>>>>> .merge_file_MlXvth
+=======
+>>>>>>> .merge_file_HPxh0d
 ]
 
 MIDDLEWARE = [
