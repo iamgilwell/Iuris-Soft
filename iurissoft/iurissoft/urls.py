@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('iuris_admin.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+<<<<<<< .merge_file_rQQBbo
 <<<<<<< .merge_file_hFHSTm
 <<<<<<< .merge_file_yu8Qnl
 <<<<<<< .merge_file_dlQqsx
@@ -39,4 +40,7 @@ urlpatterns = [
 =======
     path('ckeditor',include('ckeditor_uploader.urls')),
 >>>>>>> .merge_file_ImQ2Ql
+=======
+    path('ckeditor',include('ckeditor_uploader.urls')),
+>>>>>>> .merge_file_ZNNPVn
 ]
