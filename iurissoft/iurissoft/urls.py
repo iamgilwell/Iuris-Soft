@@ -21,10 +21,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('iuris_admin.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+<<<<<<< .merge_file_yu8Qnl
+<<<<<<< .merge_file_dlQqsx
 <<<<<<< .merge_file_VY03lu
     #url(r'control/',include('control_panel.urls')),
     url(r'contacts/',include('contactsmanagement.urls')),
 =======
     path('ckeditor',include('ckeditor_uploader.urls')),
 >>>>>>> .merge_file_ToBSbu
+=======
+    path('ckeditor',include('ckeditor_uploader.urls')),
+>>>>>>> .merge_file_LlVzTv
+=======
+    path('ckeditor',include('ckeditor_uploader.urls')),
+>>>>>>> .merge_file_ErDSSj
 ]
