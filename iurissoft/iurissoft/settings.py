@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'iuris_admin',
     'contactsmanagement',
     'clients',
-    'contracts',
     'employees',
     'organizations',
     'contractsmanagement',
     'ckeditor',
     'ckeditor_uploader',
+    'django_countries'
 ]
 
 MIDDLEWARE = [
