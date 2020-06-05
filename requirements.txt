@@ -1,7 +1,7 @@
 astroid==1.4.4
 beautifulsoup4==4.4.1
 chardet==2.3.0
-Django==2.0.7
+Django==2.2.13
 django-ckeditor==5.7.1
 django-countries==5.5
 django-js-asset==1.2.2
