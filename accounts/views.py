@@ -1,3 +1,84 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    DetailView,
+)
+from .models import User, Profile, Organization
+from .forms import (
+    CustomUserCreationForm,
+    CustomUserChangeForm,
+    ProfileForm,
+    OrganizationForm,
+)
 
-# Create your views here.
+
+class UserListView(ListView):
+    model = User
+    template_name = "accounts/user_list.html"
+    context_object_name = "users"
+
+
+class UserCreateView(CreateView):
+    model = User
+    form_class = CustomUserCreationForm
+    template_name = "accounts/user_form.html"
+    success_url = reverse_lazy("accounts:users")
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    form_class = CustomUserChangeForm
+    template_name = "accounts/user_form.html"
+    success_url = reverse_lazy("accounts:users")
+
+
+class UserDeleteView(DeleteView):
+    model = User
+    template_name = "accounts/user_confirm_delete.html"
+    success_url = reverse_lazy("accounts:users")
+
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = "accounts/user_detail.html"
+
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    form_class = ProfileForm
+    template_name = "accounts/profile_form.html"
+    success_url = reverse_lazy("accounts:users")
+
+
+class OrganizationListView(ListView):
+    model = Organization
+    template_name = "accounts/organization_list.html"
+    context_object_name = "organizations"
+
+
+class OrganizationCreateView(CreateView):
+    model = Organization
+    form_class = OrganizationForm
+    template_name = "accounts/organization_form.html"
+    success_url = reverse_lazy("organization-list")
+
+
+class OrganizationUpdateView(UpdateView):
+    model = Organization
+    form_class = OrganizationForm
+    template_name = "accounts/organization_form.html"
+    success_url = reverse_lazy("organization-list")
+
+
+class OrganizationDeleteView(DeleteView):
+    model = Organization
+    template_name = "accounts/organization_confirm_delete.html"
+    success_url = reverse_lazy("organization-list")
+
+
+class OrganizationDetailView(DetailView):
+    model = Organization
+    template_name = "accounts/organization_detail.html"

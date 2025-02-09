@@ -1,10 +1,10 @@
 {% load static %}
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
   <div class="sidebar-brand">
-    <a href="./index.html" class="brand-link">
+    <a href="{% url "dashboard:index" %}" class="brand-link">
       <img
         src="{% static 'assets/img/AdminLTELogo.png' %}"
-        alt="AdminLTE Logo"
+        alt="Iuris Soft"
         class="brand-image opacity-75 shadow"
       />
       <span class="brand-text fw-light">Iuris Soft</span>
@@ -26,54 +26,18 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon bi bi-clipboard-fill"></i>
+            <i class="nav-icon bi bi-people-fill"></i>
             <p>
-              Layout Options
+              User Management
               <span class="nav-badge badge text-bg-secondary me-3">6</span>
               <i class="nav-arrow bi bi-chevron-right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./layout/unfixed-sidebar.html" class="nav-link">
+              <a href="{% url 'accounts:users' %}" class="nav-link">
                 <i class="nav-icon bi bi-circle"></i>
-                <p>Default Sidebar</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/fixed-sidebar.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Fixed Sidebar</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/layout-custom-area.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Layout <small>+ Custom Area </small></p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/sidebar-mini.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Sidebar Mini</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/collapsed-sidebar.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Sidebar Mini <small>+ Collapsed</small></p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/logo-switch.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Sidebar Mini <small>+ Logo Switch</small></p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./layout/layout-rtl.html" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Layout RTL</p>
+                <p>All Users</p>
               </a>
             </li>
           </ul>

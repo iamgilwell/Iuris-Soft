@@ -19,6 +19,14 @@ class Client(AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin, models.Model
         return self.name
 
 
+class CaseType(SlugMixin, TimestampMixin, models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 class Case(SlugMixin, TimestampMixin, models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -26,6 +34,7 @@ class Case(SlugMixin, TimestampMixin, models.Model):
         max_length=10, choices=CaseStatus.choices, default=CaseStatus.OPEN
     )
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    case_type = models.ManyToManyField(CaseType, related_name="case_type", blank=True)
     assigned_users = models.ManyToManyField(
         User, related_name="assigned_to", blank=True
     )
