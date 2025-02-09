@@ -12,3 +12,10 @@ class DocumentType(models.TextChoices):
     EVIDENCE = "EV", "Evidence"
     CORRESPONDENCE = "CO", "Correspondence"
     OTHER = "OT", "Other"
+
+
+class UserType(models.TextChoices):
+    JUDGE = "Judge", "Judge"
+    ADVOCATE = "Advocate", "Advocate"
+    LAWYER = "Lawyer", "Lawyer"
+    NORMAL = "Normal", "Normal User"

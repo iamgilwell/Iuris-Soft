@@ -1,9 +1,12 @@
 from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
+from django.contrib.auth import get_user_model
 
 from utils.enum import CaseStatus, DocumentType
 from utils.mixins import AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin
+
+User = get_user_model()
 
 
 class Client(AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin, models.Model):
@@ -23,9 +26,31 @@ class Case(SlugMixin, TimestampMixin, models.Model):
         max_length=10, choices=CaseStatus.choices, default=CaseStatus.OPEN
     )
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    assigned_users = models.ManyToManyField(
+        User, related_name="assigned_to", blank=True
+    )
+    main_assignee = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="case_lead",
+    )
 
     def __str__(self):
         return self.title
+
+
+class CaseRuling(SlugMixin, TimestampMixin, models.Model):
+    case = models.ForeignKey(Case, on_delete=models.CASCADE, related_name="rulings")
+    ruling_text = models.TextField()
+    ruled_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    ruling_date = models.DateTimeField()
+
+    def __str__(self):
+        return (
+            f"Ruling for {self.case.title} on {self.ruling_date.strftime('%Y-%m-%d')}"
+        )
 
 
 class Document(SlugMixin, TimestampMixin, models.Model):

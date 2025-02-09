@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django_countries.fields import CountryField
 
+from utils.enum import UserType
 from utils.mixins import AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin
 
 
@@ -12,6 +13,9 @@ class User(AbstractUser, TimestampMixin):
         "accounts.Organization", on_delete=models.CASCADE, null=True, blank=True
     )
     is_superadmin = models.BooleanField(default=False)
+    user_type = models.CharField(
+        max_length=20, choices=UserType.choices, default=UserType.NORMAL
+    )
     country = CountryField(default=None, null=True)
 
     USERNAME_FIELD = "email"
