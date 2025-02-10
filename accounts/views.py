@@ -6,7 +6,7 @@ from django.views.generic import (
     DeleteView,
     DetailView,
 )
-from .models import User, Profile, Organization
+from .models import Client, User, Profile, Organization
 from .forms import (
     CustomUserCreationForm,
     CustomUserChangeForm,
@@ -82,3 +82,18 @@ class OrganizationDeleteView(DeleteView):
 class OrganizationDetailView(DetailView):
     model = Organization
     template_name = "accounts/organization_detail.html"
+
+
+class ClientCreateView(CreateView):
+    model = Client
+    fields = ["user", "organization"]
+    template_name = "users/client_form.html"
+    success_url = "/clients/"
+
+
+# class ClientListView(LoginRequiredMixin, ListView):
+class ClientListView(ListView):
+
+    model = Client
+    template_name = "users/client_list.html"
+    context_object_name = "clients"

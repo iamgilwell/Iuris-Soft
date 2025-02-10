@@ -17,6 +17,9 @@ class User(AbstractUser, TimestampMixin):
         max_length=20, choices=UserType.choices, default=UserType.NORMAL
     )
     country = CountryField(default=None, null=True)
+    hourly_rate = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    phone_number = models.CharField(max_length=20, blank=True)
+    address = models.TextField(blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "first_name", "last_name"]
@@ -44,3 +47,13 @@ class Organization(AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin, models
 
     def __str__(self):
         return self.name
+
+
+class Client(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    client_organization = models.ForeignKey(
+        Organization, on_delete=models.CASCADE, related_name="client_organization"
+    )
+
+    def __str__(self):
+        return self.user.get_full_name() or self.user.username

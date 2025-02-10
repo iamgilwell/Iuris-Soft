@@ -4,6 +4,8 @@ from django.db import models
 class CaseStatus(models.TextChoices):
     OPEN = "OPEN", "Open"
     CLOSED = "CLOSED", "Closed"
+    IN_PROGRESS = "IPG", "In Progress"
+    ON_HOLD = "OHD", "On Hold"
     PENDING = "PENDING", "Pending"
 
 

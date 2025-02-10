@@ -13,6 +13,9 @@ class CustomUserCreationForm(UserCreationForm):
             "last_name",
             "user_type",
             "country",
+            "hourly_rate",
+            "phone_number",
+            "address",
         )
 
 
@@ -26,6 +29,9 @@ class CustomUserChangeForm(UserChangeForm):
             "last_name",
             "user_type",
             "country",
+            "hourly_rate",
+            "phone_number",
+            "address",
         )
 
 

@@ -6,7 +6,9 @@ from django.views.generic import (
     DeleteView,
 )
 from django.urls import reverse_lazy
-from .models import Client, Case, Document
+
+from accounts.models import Client
+from cases.models.cases import Case, Document
 
 
 # Client views
@@ -49,6 +51,14 @@ class CaseListView(ListView):
 class CaseDetailView(DetailView):
     model = Case
     template_name = "cases/case_detail.html"
+    context_object_name = "case"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["activities"] = self.object.caseactivity_set.all().order_by(
+            "-timestamp"
+        )
+        return context
 
 
 class CaseCreateView(CreateView):
