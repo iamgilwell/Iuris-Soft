@@ -20,7 +20,7 @@
             <p><strong>Last Name:</strong> {{ object.last_name }}</p>
             <p><strong>User Type:</strong> {{ object.user_type }}</p>
             <p><strong>Country:</strong> {{ object.country }}</p>
-            <a href="{% url 'user-update' object.pk %}" class="btn btn-warning"
+            <a href="{% url 'accounts:user-update' object.slug %}" class="btn btn-warning"
               >Edit</a
             >
             <a href="{% url 'accounts:users' %}" class="btn btn-secondary"

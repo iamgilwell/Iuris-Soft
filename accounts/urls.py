@@ -17,10 +17,10 @@ app_name = "accounts"
 
 urlpatterns = [
     path("", UserListView.as_view(), name="users"),
-    path("users/create/", UserCreateView.as_view(), name="user-create"),
-    path("users/<int:pk>/update/", UserUpdateView.as_view(), name="user-update"),
-    path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="user-delete"),
-    path("users/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
+    path("create/", UserCreateView.as_view(), name="create"),
+    path("<str:slug>/update/", UserUpdateView.as_view(), name="user-update"),
+    path("<str:slug>/delete/", UserDeleteView.as_view(), name="user-delete"),
+    path("<str:slug>/", UserDetailView.as_view(), name="user-detail"),
     path(
         "profile/<int:pk>/update/", ProfileUpdateView.as_view(), name="profile-update"
     ),

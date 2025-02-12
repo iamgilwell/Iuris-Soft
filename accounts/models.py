@@ -7,7 +7,7 @@ from utils.enum import UserType
 from utils.mixins import AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin
 
 
-class User(AbstractUser, TimestampMixin):
+class User(AbstractUser,  SlugMixin,TimestampMixin):
     email = models.EmailField(unique=True)
     organization = models.ForeignKey(
         "accounts.Organization", on_delete=models.CASCADE, null=True, blank=True
@@ -19,7 +19,7 @@ class User(AbstractUser, TimestampMixin):
     country = CountryField(default=None, null=True)
     hourly_rate = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     phone_number = models.CharField(max_length=20, blank=True)
-    address = models.TextField(blank=True)
+    address = models.CharField(max_length=50, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "first_name", "last_name"]

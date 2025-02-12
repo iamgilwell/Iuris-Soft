@@ -1,31 +1,20 @@
+import uuid
 from django.db import models
 from django.urls import reverse
+from accounts.models import Client
 from django_countries.fields import CountryField
 from django.contrib.auth import get_user_model
+from django.utils.text import slugify
 
-# from utils.common import generate_case_number
 from utils.enum import CaseStatus, DocumentType
 from utils.mixins import AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin
 
 User = get_user_model()
 
 
-import uuid
-
 
 def generate_case_number():
     return f"CASE-{uuid.uuid4().hex[:6].upper()}"
-
-
-class Client(AddressAndPhoneNumberMixin, SlugMixin, TimestampMixin, models.Model):
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    country = CountryField(default=None, null=True)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.name
-
 
 class CaseType(SlugMixin, TimestampMixin, models.Model):
     title = models.CharField(max_length=255)
@@ -36,7 +25,10 @@ class CaseType(SlugMixin, TimestampMixin, models.Model):
 
 
 class Case(SlugMixin, TimestampMixin, models.Model):
-    case_number = models.CharField(max_length=50, default=generate_case_number)
+    case_number = models.CharField(
+        max_length=50, default=generate_case_number, unique=True
+    )
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     case_type = models.ManyToManyField(CaseType, related_name="case_type", blank=True)
     status = models.CharField(
@@ -59,11 +51,21 @@ class Case(SlugMixin, TimestampMixin, models.Model):
         self._original_state = self._get_current_state()
 
     def _get_current_state(self):
-        return {field.name: getattr(self, field.name) for field in self._meta.fields}
+        state = {}
+        for field in self._meta.fields:
+            try:
+                state[field.name] = getattr(self, field.name)
+            except Exception:
+                state[field.name] = None
+        return state
 
     def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.case_number)
+
         is_new = self._state.adding
         super().save(*args, **kwargs)
+
         if is_new:
             CaseActivity.objects.create(
                 case=self, activity=f"Case {self.case_number} created."
@@ -85,6 +87,9 @@ class Case(SlugMixin, TimestampMixin, models.Model):
 
     def __str__(self):
         return self.case_number
+
+    class Meta:
+        ordering = ["-created"]
 
 
 class CaseActivity(models.Model):
