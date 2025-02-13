@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import User, Profile, Organization
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Row, Column, Submit, Button
+from crispy_forms.layout import Layout, Row, Column, Field, Submit, Button
 from django.urls import reverse_lazy
 from django import forms
 from .models import User
@@ -22,6 +22,8 @@ class CustomUserCreationForm(UserCreationForm):
             "hourly_rate",
             "phone_number",
             "address",
+            "password1",  # Add password1 field
+            "password2",  # Add password2 field
         )
 
     def __init__(self, *args, **kwargs):
@@ -31,6 +33,7 @@ class CustomUserCreationForm(UserCreationForm):
         self.helper.form_class = "form-horizontal"
         self.helper.label_class = "col-md-4 col-form-label"
         self.helper.field_class = "col-md-8"
+        self.helper.field_class = "form-control"  
 
         self.helper.layout = Layout(
             Row(
@@ -49,7 +52,7 @@ class CustomUserCreationForm(UserCreationForm):
                 Column("hourly_rate", css_class="col-md-6"),
                 Column("phone_number", css_class="col-md-6"),
             ),
-              Row(
+            Row(
                 Column(
                     Row(
                         Column(
@@ -58,6 +61,10 @@ class CustomUserCreationForm(UserCreationForm):
                     ),
                     css_class="col-12",
                 ),
+            ),
+            Row(
+                Column("password1", css_class="col-md-6"),  # Add password1 field
+                Column("password2", css_class="col-md-6"),  # Add password2 field
             ),
             Row(
                 Column(
@@ -74,8 +81,6 @@ class CustomUserCreationForm(UserCreationForm):
                 ),
             ),
         )
-
-
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = User
@@ -89,6 +94,7 @@ class CustomUserChangeForm(UserChangeForm):
             "hourly_rate",
             "phone_number",
             "address",
+            "password",  # Add password field
         )
 
     def __init__(self, *args, **kwargs):
@@ -123,6 +129,9 @@ class CustomUserChangeForm(UserChangeForm):
                 ),
             ),
             Row(
+                Column("password", css_class="col-md-6"),  # Add password field
+            ),
+            Row(
                 Column(
                     Submit("submit", "Save", css_class="btn btn-success mx-2"),
                     Button(
@@ -137,8 +146,6 @@ class CustomUserChangeForm(UserChangeForm):
                 ),
             ),
         )
-
-
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
