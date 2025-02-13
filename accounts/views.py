@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
@@ -26,6 +27,11 @@ class UserCreateView(CreateView):
     form_class = CustomUserCreationForm
     template_name = "accounts/user_form.html"
     success_url = reverse_lazy("accounts:users")
+
+    def form_valid(self, form):
+        user = form.save()
+        messages.success(self.request, f"{user.username} successfully added.")
+        return super().form_valid(form)
 
 
 class UserUpdateView(UpdateView):
