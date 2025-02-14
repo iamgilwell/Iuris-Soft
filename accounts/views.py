@@ -40,11 +40,20 @@ class UserUpdateView(UpdateView):
     template_name = "accounts/user_form.html"
     success_url = reverse_lazy("accounts:users")
 
+    def form_valid(self, form):
+        user = form.save()
+        messages.success(self.request, f"{user.username.title()} successfully updated.")
+        return super().form_valid(form)
+
 
 class UserDeleteView(DeleteView):
     model = User
     template_name = "accounts/user_confirm_delete.html"
     success_url = reverse_lazy("accounts:users")
+
+    def form_valid(self, form):
+        messages.success(self.request, f"Successfully deleted.")
+        return super().form_valid(form)
 
 
 class UserDetailView(DetailView):

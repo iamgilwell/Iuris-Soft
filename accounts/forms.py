@@ -31,9 +31,9 @@ class CustomUserCreationForm(UserCreationForm):
         self.helper = FormHelper()
         self.helper.form_method = "post"
         self.helper.form_class = "form-horizontal"
-        self.helper.label_class = "col-md-4 col-form-label"
+        # self.helper.label_class = "col-md-4 col-form-label"
         self.helper.field_class = "col-md-8"
-        self.helper.field_class = "form-control"  
+        self.helper.field_class = "form-control"
 
         self.helper.layout = Layout(
             Row(
@@ -49,22 +49,13 @@ class CustomUserCreationForm(UserCreationForm):
                 Column("country", css_class="col-md-6"),
             ),
             Row(
-                Column("hourly_rate", css_class="col-md-6"),
-                Column("phone_number", css_class="col-md-6"),
+                Column("hourly_rate", css_class="col-md-4"),
+                Column("phone_number", css_class="col-md-4"),
+                Column("address", css_class="col-md-4"),
             ),
             Row(
-                Column(
-                    Row(
-                        Column(
-                            "address", css_class="col-md-8"
-                        ),
-                    ),
-                    css_class="col-12",
-                ),
-            ),
-            Row(
-                Column("password1", css_class="col-md-6"),  # Add password1 field
-                Column("password2", css_class="col-md-6"),  # Add password2 field
+                Column("password1", css_class="col-md-6"),
+                Column("password2", css_class="col-md-6"),
             ),
             Row(
                 Column(
@@ -81,6 +72,8 @@ class CustomUserCreationForm(UserCreationForm):
                 ),
             ),
         )
+
+
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = User
@@ -115,18 +108,9 @@ class CustomUserChangeForm(UserChangeForm):
                 Column("country", css_class="col-md-6"),
             ),
             Row(
-                Column("hourly_rate", css_class="col-md-6"),
-                Column("phone_number", css_class="col-md-6"),
-            ),
-            Row(
-                Column(
-                    Row(
-                        Column(
-                            "address", css_class="col-md-8 offset-md-4"
-                        ),
-                    ),
-                    css_class="col-12",
-                ),
+                Column("hourly_rate", css_class="col-md-4"),
+                Column("phone_number", css_class="col-md-4"),
+                Column("address", css_class="col-md-4"),
             ),
             Row(
                 Column("password", css_class="col-md-6"),  # Add password field
@@ -146,6 +130,8 @@ class CustomUserChangeForm(UserChangeForm):
                 ),
             ),
         )
+
+
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile

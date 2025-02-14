@@ -1,3 +1,11 @@
 .bg-body-secondary {
     background-color: rgb(0 0 0) !important;
 }
+
+.form-control {
+    border:none !important;
+}
+
+.textinput, .emailinput, .numberinput, .passwordinput{
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+}
